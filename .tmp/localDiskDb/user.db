@@ -1,3 +1,6 @@
 {"$$indexCreated":{"fieldName":"id","unique":true,"sparse":false}}
 {"$$indexCreated":{"fieldName":"username","unique":true,"sparse":false}}
-{"createdAt":1538757531260,"updatedAt":1538757531260,"id":1,"username":"admin","name":"Administrator","password":"admin","goal":0,"_id":1}
+{"createdAt":1538940225804,"updatedAt":1538940225804,"id":1,"username":"admin","name":"Administrator","password":"admin","goal":0,"_id":1}
+{"createdAt":1538940479843,"updatedAt":1538943699785,"id":3,"username":"steven","name":"a;dsflas;ldfj","password":"a;dsjfl;akdf","goal":185,"_id":3}
+{"createdAt":1538940485853,"updatedAt":1538940485853,"id":4,"username":"bill","name":"william","password":"yep","goal":185,"_id":4}
+{"username":"test","name":"test","password":"test","goal":185,"createdAt":1538947166813,"updatedAt":1538947166813,"id":5,"_id":5}
