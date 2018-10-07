@@ -51,7 +51,12 @@ module.exports.routes = {
    * WEIGHT
    */
 	'get r|^\/v([0-9]+)\/weight\/([0-9]+)$|version,userId': 'weight/list',
-	'post r|^\/v([0-9]+)\/weight\/([0-9]+)$|version,userId': 'weight/add',
+  'post r|^\/v([0-9]+)\/weight\/([0-9]+)$|version,userId': 'weight/add',
+  
+  'get /users/:username?' : 'users/find',
+  'post /users' : 'users/create',
+  'put /users/:username?' : 'users/update',
+  'delete /users/:username?' : 'users/destroy'
 
   //  ╦ ╦╔═╗╔╗ ╦ ╦╔═╗╔═╗╦╔═╔═╗
   //  ║║║║╣ ╠╩╗╠═╣║ ║║ ║╠╩╗╚═╗
