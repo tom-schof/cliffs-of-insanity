@@ -1,6 +1,6 @@
 module.exports = async function findUser(req, res) {
 
-	const username = req.body.username;
+	var username = req.params.username;
 
 	if (username !== "") {
 		const find = await User.find({

@@ -1,7 +1,7 @@
 module.exports = async function postToken(req, res) {
 //  console.log(req.body);
- let username;
- let password;
+ var username;
+ var password;
   if ( typeof req.body == "undefined"){
     // console.log("it was undefined")
    username = req.username;
