@@ -1,6 +1,6 @@
 module.exports = function addWeight(req, res) {
 	const add = Weight.create({
-		user: req.params.userId,
+		user: req.params.id,
 		pounds: req.body.pounds,
 	}).meta({fetch: true});
 

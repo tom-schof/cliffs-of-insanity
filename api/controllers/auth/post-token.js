@@ -1,6 +1,17 @@
 module.exports = async function postToken(req, res) {
-  const username = req.body.username;
-  const password = req.body.password;
+//  console.log(req.body);
+ let username;
+ let password;
+  if ( typeof req.body == "undefined"){
+    // console.log("it was undefined")
+   username = req.username;
+   password = req.password;
+ }else{
+  //  console.log('else');
+  username = req.body.username;
+  password = req.body.password;
+ }
+  
   
   user = await User.findByCredentials(username, password);
 
@@ -8,6 +19,7 @@ module.exports = async function postToken(req, res) {
     if (err) {
       return res.unauthorized(err);
     }
+    // console.log(token);
     return res.status(200).send(token);
   });
 
