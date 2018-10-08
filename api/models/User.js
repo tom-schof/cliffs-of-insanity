@@ -7,6 +7,7 @@
  * 
  */
 
+var bcrypt = require('bcryptjs');
 module.exports = {
 
   attributes: {
@@ -30,8 +31,7 @@ module.exports = {
     goal: {
       type: 'number',
       required: false,
-    }
-   
+    },
     //  ╔═╗╔╦╗╔╗ ╔═╗╔╦╗╔═╗
     //  ║╣ ║║║╠╩╗║╣  ║║╚═╗
     //  ╚═╝╩ ╩╚═╝╚═╝═╩╝╚═╝
@@ -43,25 +43,26 @@ module.exports = {
 
   },
   findByCredentials: async function checkCredentials(username, password) {
-    const user = await User.findOne({
-      username
-    });
-    
-    // Plain Text version:
-    // if (user.password === password) {
-    //   return user;
-    // } else {
-    //   return false;
-    // }    
-    
-    // Encrypted version:
-    let bcrypt = require('bcryptjs');
-    console.log("User inputted password: " + password);
-    console.log("Password stored in DB: " + user.password);
-    let validated = bcrypt.compareSync(password, user.password);
-    if (validated)
-      return user;
-    else 
-      return false;
-  }
+      const user = await User.findOne({
+        username
+      });
+
+      if (user.password === password) {
+        return user;
+      } else {
+        return false;
+      }
+    },
+
+    encryptPassword: async function bcryptEncryption(next) {
+      bcrypt.genSalt(10, function (err, salt) {
+        bcrypt.hash(this.attributes.password, salt, function (err, hash) {
+          // Store hash in your password DB.
+
+          this.attributes.password = hash;
+          next();
+        });
+
+      });
+    }
 };
