@@ -22,6 +22,8 @@ module.exports.bootstrap = async function(done) {
 
   await User.createEach([
     { username: 'admin', name:  'Administrator', password: 'admin'},
+  
+
     // etc.
   ]);
   // ```
