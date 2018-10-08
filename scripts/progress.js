@@ -1,14 +1,20 @@
+// run this script with 'sails run progress username ' ex: sails run progress admin 
+
+
 module.exports = {
 
 
   friendlyName: 'Progress',
 
 
-  description: 'Returns how much weight a user has lost.',
+  description: 'Returns how much weight a user has lost. Run this script with sails run progress',
 
-
+  args: ['username'],
   inputs: {
-
+    username: {
+      type: 'string',
+      required: true
+    },
   },
 
 
@@ -18,7 +24,7 @@ module.exports = {
 
     // All done.
 
-    await sails.helpers.weightLost('admin');
+    await sails.helpers.weightLost(inputs.username);
     return exits.success();
 
   }

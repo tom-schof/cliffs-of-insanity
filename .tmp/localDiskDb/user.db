@@ -1,4 +1,4 @@
 {"$$indexCreated":{"fieldName":"id","unique":true,"sparse":false}}
 {"$$indexCreated":{"fieldName":"username","unique":true,"sparse":false}}
-{"createdAt":1539015935105,"updatedAt":1539016856032,"id":1,"username":"admin","name":"Administrator","password":"admin","goal":160,"_id":1}
+{"createdAt":1539015935105,"updatedAt":1539022001065,"id":1,"username":"admin","name":"Administrator","password":"admin","goal":160,"_id":1}
 {"createdAt":1539018480779,"updatedAt":1539018555506,"id":3,"username":"test3","name":"test3","password":"$2a$10$MuMCGRe3gixyFijVEoIvS.wMK4nBRRDy3TxrJNx8Y35XXLbObRkzq","goal":185,"_id":3}
