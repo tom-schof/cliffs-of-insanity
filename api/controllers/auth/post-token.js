@@ -19,7 +19,7 @@ module.exports = async function postToken(req, res) {
     if (err) {
       return res.unauthorized(err);
     }
-    // console.log(token);
+    console.log(token);
     return res.status(200).send(token);
   });
 

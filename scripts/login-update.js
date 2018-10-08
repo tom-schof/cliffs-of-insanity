@@ -47,7 +47,7 @@
 // };
 const postToken = require("../api/controllers/auth/post-token");
 const addWeight = require("../api/controllers/weight/add");
-const find = require("../api/controllers/users/find");
+const findUser = require("../api/controllers/users/find");
 module.exports = {
 
 
@@ -83,9 +83,15 @@ module.exports = {
     // console.log(inputs);
 
     await postToken(inputs);
-    const user = User.find(inputs.username);
-    console.log(user);
-    user.addWeight[inputs.day1];
+    
+    let weightParams = {
+      user: inputs.username,
+      pounds: inputs.day1
+    }
+
+    addWeight(weightParams);
+
+    // user.addWeight[inputs.day1];
 
 
     // All done.
