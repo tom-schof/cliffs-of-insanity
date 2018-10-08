@@ -8,6 +8,7 @@ module.exports = async function createUser(req, res) {
             name: req.body.name,
             password: hash,
             goal: req.body.goal
+            
         }).meta({
             fetch: true
         });

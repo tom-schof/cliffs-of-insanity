@@ -11,6 +11,7 @@ module.exports = async function updateUser(req, res) {
                 name: req.body.name,
                 password: hash,
                 goal: req.body.goal
+                
             }).fetch();
 
             console.log(update);
